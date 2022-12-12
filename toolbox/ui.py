@@ -9,8 +9,8 @@ import numpy as np
 import sounddevice as sd
 import soundfile as sf
 import umap
-from PyQt5.QtCore import Qt, QStringListModel
-from PyQt5.QtWidgets import *
+from PyQt6.QtCore import Qt, QStringListModel
+from PyQt6.QtWidgets import *
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 from encoder.inference import plot_embedding_as_heatmap
@@ -589,15 +589,15 @@ class UI(QDialog):
         gen_layout.addWidget(self.loading_bar)
 
         self.log_window = QLabel()
-        self.log_window.setAlignment(Qt.AlignBottom | Qt.AlignLeft)
+        self.log_window.setAlignment(Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignLeft)
         gen_layout.addWidget(self.log_window)
         self.logs = []
         gen_layout.addStretch()
 
 
         ## Set the size of the window and of the elements
-        max_size = QDesktopWidget().availableGeometry(self).size() * 0.8
-        self.resize(max_size)
+        #max_size = QDesktopWidget().availableGeometry(self).size() * 0.8
+        self.resize(640, 480)
 
         ## Finalize the display
         self.reset_interface()
