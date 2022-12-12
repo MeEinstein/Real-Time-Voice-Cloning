@@ -604,4 +604,4 @@ class UI(QDialog):
         self.show()
 
     def start(self):
-        self.app.exec_()
+        self.app.exec()
